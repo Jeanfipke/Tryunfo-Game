@@ -17,7 +17,7 @@ class Form extends Component {
       onSaveButtonClick,
     } = this.props;
     return (
-      <form id="main-form">
+      <form className="main-form">
         <label htmlFor="card-name">
           Nome
           <input

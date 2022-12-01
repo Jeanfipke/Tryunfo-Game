@@ -41,7 +41,7 @@ class App extends React.Component {
       isSaveButtonDisabled,
     } = this.state;
     return (
-      <div id="main">
+      <div className="main">
         <h1>Tryunfo</h1>
         <Form
           cardName={ cardName }
