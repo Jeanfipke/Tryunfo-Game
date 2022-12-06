@@ -23,6 +23,7 @@ class Form extends Component {
           <input
             value={ cardName }
             onChange={ onInputChange }
+            // onKeyUp={ checkValues }
             name="cardName"
             type="text"
             id="card-name"
@@ -97,13 +98,13 @@ class Form extends Component {
             <option value="muito raro">muito raro</option>
           </select>
         </label>
-        <label htmlFor="cardTrunfo">
+        <label className="cardTrunfoDiv" htmlFor="cardTrunfo">
           <input
             checked={ cardTrunfo }
             onChange={ onInputChange }
             type="checkbox"
             name="cardTrunfo"
-            id="cardTrunfo"
+            className="cardTrunfo"
             data-testid="trunfo-input"
           />
           Super Trybe Trunfo
@@ -118,6 +119,7 @@ class Form extends Component {
         >
           Salvar
         </button>
+
       </form>
 
     );
@@ -132,14 +134,10 @@ Form.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardName: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
-  cardTrunfo: PropTypes.bool,
+  cardTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
-  onSaveButtonClick: PropTypes.func.isRequired,
   onInputChange: PropTypes.func.isRequired,
-};
-
-Form.defaultProps = {
-  cardTrunfo: false,
+  onSaveButtonClick: PropTypes.func.isRequired,
 };
 
 export default Form;

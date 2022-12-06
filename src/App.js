@@ -10,22 +10,57 @@ class App extends React.Component {
     this.state = {
       cardName: '',
       cardDescription: '',
-      cardAttr1: '',
-      cardAttr2: '',
-      cardAttr3: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardImage: '',
       cardRare: '',
       cardTrunfo: false,
       // hasTrunfo: false,
-      isSaveButtonDisabled: false,
+      isSaveButtonDisabled: true,
     };
   }
+
+  checkValues = () => {
+    const {
+      cardName,
+      cardDescription,
+      cardImage,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+    } = this.state;
+
+    const minNum = 0;
+    const maxNum = 90;
+    const maxSum = 210;
+
+    if (
+      cardName.length > 0
+      && cardDescription.length > 0
+      && cardImage.length > 0
+      && Number(cardAttr1) >= minNum
+      && Number(cardAttr1) <= maxNum
+      && Number(cardAttr2) >= minNum
+      && Number(cardAttr2) <= maxNum
+      && Number(cardAttr3) >= minNum
+      && Number(cardAttr3) <= maxNum
+      && (Number(cardAttr1)
+      + Number(cardAttr2)
+      + Number(cardAttr3))
+      <= maxSum
+    ) {
+      this.setState({ isSaveButtonDisabled: false });
+    } else {
+      this.setState({ isSaveButtonDisabled: true });
+    }
+  };
 
   onInputChange = ({ target: { name, value, checked, type } }) => {
     const value2 = type === 'checkbox' ? checked : value;
     this.setState({
       [name]: value2,
-    });
+    }, () => this.checkValues());
   };
 
   render() {
@@ -38,33 +73,29 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      isSaveButtonDisabled,
     } = this.state;
+
     return (
       <div className="main">
         <h1>Tryunfo</h1>
-        <Form
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          isSaveButtonDisabled={ isSaveButtonDisabled }
-          onInputChange={ this.onInputChange }
-        />
-        <Card
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-        />
+        <section className="wrap">
+          <Form
+            onInputChange={ this.onInputChange }
+            checkValues={ this.checkValues }
+            { ... this.state }
+          />
+          { console.log() }
+          <Card
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+          />
+        </section>
       </div>
     );
   }

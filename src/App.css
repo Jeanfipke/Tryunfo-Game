@@ -1,13 +1,90 @@
+body {
+  background-color: #335c81;
+  color: white;
+  font-weight: 700;
+}
+
+h1 {
+  margin-block: 20px;
+}
+
 .main-form {
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin-right: 50px;
 }
 
 .main {
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+input {
+  background-color: #f0f3bd;
+  border-radius: 10px;
+  margin-left: 10px;
+  padding-block: 5px;
+  padding-inline: 15px;
+  width: 200px;
+}
+
+label {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-block: 5px;
+  width: 290px;
+}
+
+select {
+  background-color: #f0f3bd;
+  border-radius: 10px;
+  color: #05668d;
+  font-weight: 700;
+  margin-left: 10px;
+  padding-block: 5px;
+  padding-inline: 15px;
+  width: 200px;
+}
+
+textarea {
+  background-color: #f0f3bd;
+  border-radius: 10px;
+  margin-left: 10px;
+  padding-block: 5px;
+  padding-inline: 15px;
+  width: 200px;
+}
+
+.wrap {
+  align-items: center;
+  display: flex;
+}
+
+.cardTrunfo {
+  width: 50px;
+}
+
+.cardTrunfoDiv {
+  display: flex;
   justify-content: center;
+}
+
+
+button {
+  background-color: #02c39a;
+  border: #f0f3bd solid 3px;
+  border-radius: 10px;
+  color: #f0f3bd;
+  font-weight: 700;
+  margin-left: 10px;
+  padding-block: 5px;
+  padding-inline: 15px;
+  width: 100px;
+}
+
+button:disabled {
+  opacity: 50%;
 }
