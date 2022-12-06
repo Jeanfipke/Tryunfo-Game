@@ -16,6 +16,7 @@ class App extends React.Component {
       cardImage: '',
       cardRare: '',
       cardTrunfo: false,
+      hasTrunfo: false,
       isSaveButtonDisabled: true,
       deck: [],
     };
@@ -31,6 +32,7 @@ class App extends React.Component {
       cardAttr3,
       cardRare,
       cardTrunfo,
+      deck,
     } = this.state;
     const card = { cardName,
       cardDescription,
@@ -40,9 +42,8 @@ class App extends React.Component {
       cardAttr3,
       cardRare,
       cardTrunfo };
-
-    this.setState((prevstate) => ({
-      deck: [prevstate.deck, card],
+    deck.push(card);
+    this.setState({
       cardName: '',
       cardDescription: '',
       cardAttr1: '0',
@@ -51,7 +52,10 @@ class App extends React.Component {
       cardImage: '',
       cardRare: 'normal',
       cardTrunfo: false,
-    }));
+    });
+    if (cardTrunfo) {
+      this.setState({ hasTrunfo: true });
+    }
   };
 
   checkValues = () => {
