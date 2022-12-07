@@ -29,6 +29,7 @@ li {
 .deck-wrap {
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -117,6 +118,18 @@ button {
   color: #f0f3bd;
   font-weight: 700;
   margin-left: 10px;
+  padding-block: 5px;
+  padding-inline: 15px;
+  width: 100px;
+}
+
+.delete-btn {
+  background-color: #af1b3b;
+  border: #f0f3bd solid 3px;
+  border-radius: 10px;
+  color: #f0f3bd;
+  font-weight: 700;
+  margin-bottom: 10px;
   padding-block: 5px;
   padding-inline: 15px;
   width: 100px;

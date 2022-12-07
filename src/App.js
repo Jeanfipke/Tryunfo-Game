@@ -22,6 +22,15 @@ class App extends React.Component {
     };
   }
 
+  deleteCard = ({ target }) => {
+    const { deck } = this.state;
+    const newDeck = deck.filter((item, index) => index !== +target.value);
+    this.setState({
+      hasTrunfo: newDeck.some((element) => element.cardTrunfo),
+      deck: newDeck,
+    });
+  };
+
   onSaveButtonClick = () => {
     const {
       cardName,
@@ -139,8 +148,11 @@ class App extends React.Component {
           <h2> Todas as cartas </h2>
           <ul className="deck">
             {
-              deck.map((element) => (
-                <li className="deck-wrap" key={ element.cardName }>
+              deck.map((element, index) => (
+                <li
+                  className="deck-wrap"
+                  key={ index }
+                >
                   <Card
                     className="deck-cards"
                     cardName={ element.cardName }
@@ -152,6 +164,16 @@ class App extends React.Component {
                     cardRare={ element.cardRare }
                     cardTrunfo={ element.cardTrunfo }
                   />
+                  <button
+                    data-testid="delete-button"
+                    value={ index }
+                    type="button"
+                    onClick={ this.deleteCard }
+                    className="delete-btn"
+                  >
+                    Excluir
+
+                  </button>
                 </li>
               ))
             }
