@@ -100,7 +100,13 @@ class Form extends Component {
         </label>
         {
           hasTrunfo === true
-            ? <p>Você já tem um Super Trunfo em seu baralho</p>
+            ? (
+              <p
+                className="cardTrunfoDiv2"
+              >
+                ⚠️ Você já tem um Super Trunfo em seu baralho
+              </p>
+            )
             : (
               <label className="cardTrunfoDiv" htmlFor="cardTrunfo">
                 <input

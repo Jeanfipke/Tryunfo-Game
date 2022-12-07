@@ -2,23 +2,34 @@ body {
   background-color: #335c81;
   color: white;
   font-weight: 700;
+  text-align: center;
 }
 
-h1 {
+h1, h2 {
   margin-block: 20px;
+}
+
+li {
+  list-style: none;
 }
 
 .main-form {
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-right: 50px;
+  margin-inline: 25px;
 }
 
 .main {
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+.deck-wrap {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 input {
@@ -61,6 +72,20 @@ textarea {
 .wrap {
   align-items: center;
   display: flex;
+  flex-direction: column;
+}
+
+.fill-form {
+  align-items: center;
+  display: flex;
+}
+
+.deck {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 .cardTrunfo {
@@ -70,6 +95,18 @@ textarea {
 .cardTrunfoDiv {
   display: flex;
   justify-content: center;
+}
+
+
+.cardTrunfoDiv2 {
+  background-color: #f0f3bd;
+  border-radius: 6px;
+  color: black;
+  display: flex;
+  font-size: 12px;
+  justify-content: center;
+  margin-block: 5px 15px;
+  padding: 3px 6px;
 }
 
 

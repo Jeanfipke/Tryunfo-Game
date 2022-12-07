@@ -110,29 +110,52 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      deck,
     } = this.state;
 
     return (
       <div className="main">
         <h1>Tryunfo</h1>
         <section className="wrap">
-          <Form
-            onInputChange={ this.onInputChange }
-            onSaveButtonClick={ this.onSaveButtonClick }
-            checkValues={ this.checkValues }
-            { ... this.state }
-          />
-          { console.log() }
-          <Card
-            cardName={ cardName }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            cardImage={ cardImage }
-            cardRare={ cardRare }
-            cardTrunfo={ cardTrunfo }
-          />
+          <section className="fill-form">
+            <Form
+              onInputChange={ this.onInputChange }
+              onSaveButtonClick={ this.onSaveButtonClick }
+              checkValues={ this.checkValues }
+              { ... this.state }
+            />
+            { console.log() }
+            <Card
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+            />
+          </section>
+          <h2> Todas as cartas </h2>
+          <ul className="deck">
+            {
+              deck.map((element) => (
+                <li className="deck-wrap" key={ element.cardName }>
+                  <Card
+                    className="deck-cards"
+                    cardName={ element.cardName }
+                    cardDescription={ element.cardDescription }
+                    cardAttr1={ element.cardAttr1 }
+                    cardAttr2={ element.cardAttr2 }
+                    cardAttr3={ element.cardAttr3 }
+                    cardImage={ element.cardImage }
+                    cardRare={ element.cardRare }
+                    cardTrunfo={ element.cardTrunfo }
+                  />
+                </li>
+              ))
+            }
+          </ul>
         </section>
       </div>
     );
