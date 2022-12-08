@@ -22,10 +22,27 @@ class Card extends Component {
           alt={ cardName }
           data-testid="image-card"
         />
-        <p className="card-info" data-testid="description-card">{cardDescription}</p>
-        <p className="card-info" data-testid="attr1-card">{cardAttr1}</p>
-        <p className="card-info" data-testid="attr2-card">{cardAttr2}</p>
-        <p className="card-info" data-testid="attr3-card">{cardAttr3}</p>
+        <p
+          className="card-info description"
+          data-testid="description-card"
+        >
+          {cardDescription}
+        </p>
+        <p className="card-info" data-testid="attr1-card">
+          Attr1 ...............................
+          {' '}
+          <span className="attr">{cardAttr1}</span>
+        </p>
+        <p className="card-info" data-testid="attr2-card">
+          Attr2 ...............................
+          {' '}
+          <span className="attr">{cardAttr2}</span>
+        </p>
+        <p className="card-info" data-testid="attr3-card">
+          Attr3 ...............................
+          {' '}
+          <span className="attr">{cardAttr3}</span>
+        </p>
         <p className="card-info" data-testid="rare-card">{cardRare}</p>
         {cardTrunfo
           ? <p className="card-info" data-testid="trunfo-card">Super Trunfo</p>

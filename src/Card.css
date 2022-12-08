@@ -4,6 +4,14 @@
   padding: 0;
 }
 
+.attr {
+  background-color: #f0f3bd;
+  border: 6px solid #02c39a;
+  border-radius: 20px 0;
+  margin-left: 6px;
+  width: 40px;
+}
+
 .card {
   align-items: center;
   background-color: #02c39a;

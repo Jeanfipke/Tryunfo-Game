@@ -14,7 +14,7 @@ class App extends React.Component {
       cardAttr2: '0',
       cardAttr3: '0',
       cardImage: '',
-      cardRare: '',
+      cardRare: 'normal',
       cardTrunfo: false,
       hasTrunfo: false,
       isSaveButtonDisabled: true,
@@ -146,6 +146,23 @@ class App extends React.Component {
             />
           </section>
           <h2> Todas as cartas </h2>
+          <label className="filtros" htmlFor="filter">
+            Filtros de busca
+            <input
+              id="filter"
+              className="filter"
+              data-testid="name-filter"
+              placeholder="Nome da carta"
+            />
+            <select defaultValue="Raridade">
+              <option disabled>Raridade</option>
+              <option>Normal</option>
+              <option>Raro</option>
+              <option>Muito Raro</option>
+            </select>
+            <input type="checkbox" className="checkbox" />
+            Super Trybe Trunfo
+          </label>
           <ul className="deck">
             {
               deck.map((element, index) => (
