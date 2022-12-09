@@ -32,6 +32,10 @@ li {
   width: 20px;
 }
 
+.checkbox-label {
+  width: 180px;
+}
+
 .main {
   align-items: center;
   display: flex;

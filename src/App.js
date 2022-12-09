@@ -19,6 +19,7 @@ class App extends React.Component {
       hasTrunfo: false,
       isSaveButtonDisabled: true,
       deck: [],
+      nameFilter: '',
     };
   }
 
@@ -109,6 +110,10 @@ class App extends React.Component {
     }, () => this.checkValues());
   };
 
+  nameFilter = ({ target: { value } }) => {
+    this.setState({ nameFilter: value });
+  };
+
   render() {
     const {
       cardName,
@@ -120,6 +125,7 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
       deck,
+      nameFilter,
     } = this.state;
 
     return (
@@ -151,8 +157,11 @@ class App extends React.Component {
             <input
               id="filter"
               className="filter"
+              type="text"
               data-testid="name-filter"
               placeholder="Nome da carta"
+              onChange={ this.nameFilter }
+              value={ nameFilter }
             />
             <select defaultValue="Raridade">
               <option disabled>Raridade</option>
@@ -160,39 +169,75 @@ class App extends React.Component {
               <option>Raro</option>
               <option>Muito Raro</option>
             </select>
-            <input type="checkbox" className="checkbox" />
-            Super Trybe Trunfo
+            <label htmlFor="checkbox" className="checkbox-label">
+              <input type="checkbox" id="checkbox" className="checkbox" />
+              Super Trybe Trunfo
+            </label>
           </label>
           <ul className="deck">
             {
-              deck.map((element, index) => (
-                <li
-                  className="deck-wrap"
-                  key={ index }
-                >
-                  <Card
-                    className="deck-cards"
-                    cardName={ element.cardName }
-                    cardDescription={ element.cardDescription }
-                    cardAttr1={ element.cardAttr1 }
-                    cardAttr2={ element.cardAttr2 }
-                    cardAttr3={ element.cardAttr3 }
-                    cardImage={ element.cardImage }
-                    cardRare={ element.cardRare }
-                    cardTrunfo={ element.cardTrunfo }
-                  />
-                  <button
-                    data-testid="delete-button"
-                    value={ index }
-                    type="button"
-                    onClick={ this.deleteCard }
-                    className="delete-btn"
-                  >
-                    Excluir
+              nameFilter === ''
+                ? (
+                  deck.map((element, index) => (
+                    <li
+                      className="deck-wrap"
+                      key={ index }
+                    >
+                      <Card
+                        className="deck-cards"
+                        cardName={ element.cardName }
+                        cardDescription={ element.cardDescription }
+                        cardAttr1={ element.cardAttr1 }
+                        cardAttr2={ element.cardAttr2 }
+                        cardAttr3={ element.cardAttr3 }
+                        cardImage={ element.cardImage }
+                        cardRare={ element.cardRare }
+                        cardTrunfo={ element.cardTrunfo }
+                      />
+                      <button
+                        data-testid="delete-button"
+                        value={ index }
+                        type="button"
+                        onClick={ this.deleteCard }
+                        className="delete-btn"
+                      >
+                        Excluir
 
-                  </button>
-                </li>
-              ))
+                      </button>
+                    </li>
+                  ))
+                )
+                : (
+                  deck.filter((item) => item.cardName.includes(nameFilter))
+                    .map((element, index) => (
+                      <li
+                        className="deck-wrap"
+                        key={ index }
+                      >
+                        <Card
+                          className="deck-cards"
+                          cardName={ element.cardName }
+                          cardDescription={ element.cardDescription }
+                          cardAttr1={ element.cardAttr1 }
+                          cardAttr2={ element.cardAttr2 }
+                          cardAttr3={ element.cardAttr3 }
+                          cardImage={ element.cardImage }
+                          cardRare={ element.cardRare }
+                          cardTrunfo={ element.cardTrunfo }
+                        />
+                        <button
+                          data-testid="delete-button"
+                          value={ index }
+                          type="button"
+                          onClick={ this.deleteCard }
+                          className="delete-btn"
+                        >
+                          Excluir
+
+                        </button>
+                      </li>
+                    ))
+                )
             }
           </ul>
         </section>
