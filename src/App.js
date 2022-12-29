@@ -111,9 +111,9 @@ class App extends React.Component {
     }, () => this.checkValues());
   };
 
-  nameFilter = ({ target: { value } }) => {
-    this.setState({ nameFilter: value });
-  };
+  // nameFilter = ({ target: { value } }) => {
+  //   this.setState({ nameFilter: value });
+  // };
 
   render() {
     const {
@@ -131,7 +131,7 @@ class App extends React.Component {
 
     return (
       <div className="main">
-        <img src={ logo } alt="logo tryunfo" />
+        <img className="lefipe" src={ logo } alt="logo tryunfo" />
         <section className="wrap">
           <section className="fill-form">
             <Form
@@ -153,7 +153,7 @@ class App extends React.Component {
             />
           </section>
           <h2> Todas as cartas </h2>
-          <label className="filtros" htmlFor="filter">
+          {/* <label className="filtros" htmlFor="filter">
             Filtros de busca
             <input
               id="filter"
@@ -174,7 +174,7 @@ class App extends React.Component {
               <input type="checkbox" id="checkbox" className="checkbox" />
               Super Trybe Trunfo
             </label>
-          </label>
+          </label> */}
           <ul className="deck">
             {
               nameFilter === ''

@@ -8,6 +8,12 @@
   padding: 0;
 }
 
+.lefipe {
+  margin-bottom: -10rem;
+  width: 40rem;
+  z-index: 1;
+}
+
 body {
   background-color: #052727;
   color: white;
