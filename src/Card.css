@@ -1,50 +1,107 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-.attr {
-  background-color: #f0f3bd;
-  border: 6px solid #02c39a;
-  border-radius: 20px 0;
-  margin-left: 6px;
-  width: 40px;
-}
-
 .card {
   align-items: center;
-  background-color: #02c39a;
-  border-radius: 5%;
-  box-shadow: #f0f3bd 3px 3px 1px;
+  background-color: #036B52;
+  border-radius: 0.97rem;
+  box-shadow: white 0 0 0 0.97rem , rgb(156, 156, 156) 0 0 2rem 0.5rem;
   color: #028090;
   display: flex;
   flex-direction: column;
-  height: 450px;
+  height: 51.486rem;
   justify-content: center;
-  margin-block: 20px;
-  margin-inline: 25px;
-  padding-top: 10px;
-  width: 300px;
+  margin-inline: 2rem;
+  margin-block: 2rem;
+  padding: 1.5rem;
+  position: relative;
+  width: 33.87rem;
 }
 
-.card img {
-  border-radius: 5%;
-  box-shadow: #f0f3bd -3px -3px 1px;
-  height: 200px;
-  margin-block: 5px;
+.card-name {
+  align-items: center;
+  background-color: #023031ea;
+  border-radius: 0.97rem 0.97rem 0 0;
+  box-shadow: rgb(37, 37, 37) 0 0.3rem 1rem 0.1rem;
+  color: white;
+  display: flex;
+  font-size: 2.725rem;
+  font-weight: 700;
+  height: 3.893rem;
+  justify-content: end;
+  padding-inline: 1.5rem;
+  position: absolute;
+  top: 1.5rem;
+  width: 30.853rem;
+  z-index: 1;
+}
+
+.card-trunfo {
+  bottom: 26.3rem;
+  position: absolute;
+  right: -0.4rem;
+  width: 10rem;
+  z-index: 1;
+}
+
+.image {
+  background-color: #fffc45;
+  border-radius: 0.97rem 0.97rem 0 0;
+  clip-path: polygon(100% 0, 100% 84%, 0 100%, 0 0);
+  height: 27rem;
+  margin-top: -5rem;
   object-fit: cover;
-  width: 250px;
+  width: 100%;
+}
+
+.info-div {
+  align-items: center;
+  background-color: white;
+  border-radius: 0 0 0.97rem 0.97rem;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 23%);
+  display: flex;
+  flex-direction: column;
+  height: 19.222rem;
+  justify-content: center;
+  margin-bottom: -4.9rem;
+  padding-top: 4rem;
+  width: 30.853rem;
+}
+
+.description {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-size: 1.3rem;
+  font-weight: 700;
+  height: 6rem;
+  justify-content: center;
+  margin-block: -2rem;
+  padding-bottom: 0.2rem;
+  transform: rotate(-8deg);
+  width: 100%;
+  z-index: 1;
 }
 
 .card-info {
   align-items: center;
-  background-color: white;
-  border-radius: 5%;
+  background-color: #F0F2F5;
+  border-radius: 0.97rem;
+  color: #3D495C;
   display: flex;
-  font-weight: 700;
-  height: 20px;
+  font-weight: 600;
+  height: 2.992rem;
+  justify-content: space-between;
+  margin-bottom: 0.512rem;
+  padding-left: 1.5rem;
+  width: 27.641rem;
+}
+
+.attr { /* attr value */
+  align-items: center;
+  background-color: #023031;
+  border-radius: 0 0.97rem 0.97rem 0;
+  color: white;
+  display: flex;
+  font-weight: 600;
+  height: 2.992rem;
   justify-content: center;
-  margin-block: 5px;
-  width: 250px;
+  width: 4.672rem;
 }

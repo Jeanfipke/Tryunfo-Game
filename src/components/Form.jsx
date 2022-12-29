@@ -21,25 +21,26 @@ class Form extends Component {
       <form className="main-form">
         <label htmlFor="card-name">
           Nome
-          <input
-            value={ cardName }
-            onChange={ onInputChange }
-            name="cardName"
-            type="text"
-            id="card-name"
-            data-testid="name-input"
-          />
         </label>
+        <input
+          className="name"
+          value={ cardName }
+          onChange={ onInputChange }
+          name="cardName"
+          type="text"
+          id="card-name"
+          data-testid="name-input"
+        />
         <label htmlFor="card-description">
           Descrição
-          <textarea
-            value={ cardDescription }
-            onChange={ onInputChange }
-            name="cardDescription"
-            id="card-description"
-            data-testid="description-input"
-          />
         </label>
+        <textarea
+          value={ cardDescription }
+          onChange={ onInputChange }
+          name="cardDescription"
+          id="card-description"
+          data-testid="description-input"
+        />
         <label htmlFor="first-atribute">
           Attr01
           <input
@@ -86,53 +87,57 @@ class Form extends Component {
         </label>
         <label htmlFor="rarity">
           Raridade
-          <select
-            value={ cardRare }
-            onChange={ onInputChange }
-            name="cardRare"
-            id="rarity"
-            data-testid="rare-input"
-            defaultValue="normal"
-          >
-            <option value="normal">Normal</option>
-            <option value="raro">Raro</option>
-            <option value="muito raro">Muito raro</option>
-          </select>
         </label>
-        {
-          hasTrunfo === true
-            ? (
-              <p
-                className="cardTrunfoDiv2"
-              >
-                ⚠️ Você já tem um Super Trunfo em seu baralho
-              </p>
-            )
-            : (
-              <label className="cardTrunfoDiv" htmlFor="cardTrunfo">
-                <input
-                  checked={ cardTrunfo }
-                  onChange={ onInputChange }
-                  type="checkbox"
-                  name="cardTrunfo"
-                  className="cardTrunfo"
-                  data-testid="trunfo-input"
-                />
-                Super Trybe Trunfo
-              </label>
-            )
-        }
-
-        <button
-          disabled={ isSaveButtonDisabled }
-          onClick={ onSaveButtonClick }
-          name="salve-btn"
-          id="save-btn"
-          data-testid="save-button"
-          type="button"
+        <select
+          className="rarity"
+          value={ cardRare }
+          onChange={ onInputChange }
+          name="cardRare"
+          id="rarity"
+          data-testid="rare-input"
+          defaultValue="normal"
         >
-          Salvar
-        </button>
+          <option value="normal">Normal</option>
+          <option value="raro">Raro</option>
+          <option value="muito raro">Muito raro</option>
+        </select>
+        <div className="save-trunfo">
+
+          {
+            hasTrunfo === true
+              ? (
+                <p
+                  className="cardTrunfoDiv2"
+                >
+                  ⚠️ Você já tem um Super Trunfo em seu baralho
+                </p>
+              )
+              : (
+                <label className="cardTrunfoDiv" htmlFor="cardTrunfo">
+                  <input
+                    checked={ cardTrunfo }
+                    onChange={ onInputChange }
+                    type="checkbox"
+                    name="cardTrunfo"
+                    className="cardTrunfo"
+                    data-testid="trunfo-input"
+                  />
+                  Super Trybe Trunfo
+                </label>
+              )
+          }
+
+          <button
+            disabled={ isSaveButtonDisabled }
+            onClick={ onSaveButtonClick }
+            name="salve-btn"
+            id="save-btn"
+            data-testid="save-button"
+            type="button"
+          >
+            Salvar
+          </button>
+        </div>
 
       </form>
 

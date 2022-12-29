@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../Card.css';
+import trunfo from '../trunfo.png';
 
 class Card extends Component {
   render() {
@@ -16,37 +17,55 @@ class Card extends Component {
     } = this.props;
     return (
       <section className="card">
-        <p className="card-info" data-testid="name-card">{cardName}</p>
+        <p className="card-name" data-testid="name-card">{cardName}</p>
         <img
+          className="image"
           src={ cardImage }
           alt={ cardName }
           data-testid="image-card"
         />
+        {
+          cardTrunfo
+            ? (
+              <img
+                src={ trunfo }
+                className="card-trunfo"
+                data-testid="trunfo-card"
+                alt="trunfo icon"
+              />
+            )
+            : ''
+        }
         <p
-          className="card-info description"
+          className="description"
           data-testid="description-card"
         >
           {cardDescription}
         </p>
-        <p className="card-info" data-testid="attr1-card">
-          Attr1 ...............................
-          {' '}
-          <span className="attr">{cardAttr1}</span>
-        </p>
-        <p className="card-info" data-testid="attr2-card">
-          Attr2 ...............................
-          {' '}
-          <span className="attr">{cardAttr2}</span>
-        </p>
-        <p className="card-info" data-testid="attr3-card">
-          Attr3 ...............................
-          {' '}
-          <span className="attr">{cardAttr3}</span>
-        </p>
-        <p className="card-info" data-testid="rare-card">{cardRare}</p>
-        {cardTrunfo
-          ? <p className="card-info" data-testid="trunfo-card">Super Trunfo</p>
-          : ''}
+        <div className="info-div">
+          <div className="card-info">
+            <p data-testid="attr1-card">
+              Attr1 ...................................
+              {' '}
+            </p>
+            <span className="attr">{cardAttr1}</span>
+          </div>
+          <div className="card-info">
+            <p data-testid="attr2-card">
+              Attr2 ...................................
+              {' '}
+            </p>
+            <span className="attr">{cardAttr2}</span>
+          </div>
+          <div className="card-info">
+            <p data-testid="attr3-card">
+              Attr3 ...................................
+              {' '}
+            </p>
+            <span className="attr">{cardAttr3}</span>
+          </div>
+          {/* <p className="card-info" data-testid="rare-card">{cardRare}</p> */}
+        </div>
       </section>
     );
   }

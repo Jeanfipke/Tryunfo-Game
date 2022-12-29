@@ -1,39 +1,74 @@
+:root {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: #335c81;
+  background-color: #052727;
   color: white;
+  font-size: 1.6rem;
   font-weight: 700;
   text-align: center;
 }
 
 h1, h2 {
-  margin-block: 20px;
+  margin-block: 2rem;
 }
 
 li {
   list-style: none;
 }
 
+.fill-form {
+  align-items: center;
+  background-color: white;
+  color: black;
+  border-radius: 1rem;
+  display: flex;
+  height: 72.1rem;
+  justify-content: space-evenly;
+  width: 112.4rem;
+}
+
 .main-form {
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-inline: 25px;
+  margin-inline: 2.5rem;
 }
 
-.filtros {
-  background-color: #02c39a;
-  border-radius: 10px;
-  padding: 20px;
-  width: 760px;
+.name {
+  border-inline: none;
+  border-top: none;
+  width: 36.5rem;
+}
+
+textarea {
+  border-inline: none;
+  border-top: none;
+  height: 8rem;
+  overflow: hidden;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  width: 36.5rem;
+}
+
+textarea:focus {
+  outline: none;
 }
 
 .checkbox {
-  margin-left: 6px;
-  width: 20px;
+  margin-left: 0.6rem;
+  width: 3rem;
 }
 
 .checkbox-label {
-  width: 180px;
+  width: 16rem;
 }
 
 .main {
@@ -50,39 +85,35 @@ li {
 }
 
 input {
-  background-color: #f0f3bd;
-  border-radius: 10px;
-  padding-block: 5px;
-  padding-inline: 15px;
-  width: 200px;
+  padding-block: 0.5rem;
+  padding-inline: 1.5rem;
+  width: 27.5rem;
 }
 
 label {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin-block: 5px;
-  width: 290px;
+  margin-block: 0.5rem;
+  width: 36.5rem;
 }
 
-select {
-  background-color: #f0f3bd;
-  border-radius: 10px;
-  color: #05668d;
+.fill-form select {
+  background-color: white;
+  border-bottom: 0.1rem solid black;
+  border-radius: 0;
+  color: black;
   font-weight: 700;
-  margin-left: 10px;
-  padding-block: 5px;
-  padding-inline: 15px;
-  width: 200px;
+  padding-block: 0.5rem;
+  padding-inline: 1.5rem;
+  width: 36.5rem;
 }
 
-textarea {
-  background-color: #f0f3bd;
-  border-radius: 10px;
-  margin-left: 10px;
-  padding-block: 5px;
-  padding-inline: 15px;
-  width: 200px;
+.save-trunfo {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: space-between;
+  width: 36.5rem;
 }
 
 .wrap {
@@ -91,65 +122,86 @@ textarea {
   flex-direction: column;
 }
 
-.fill-form {
-  align-items: center;
-  display: flex;
-}
-
 .deck {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 4rem;
 }
 
 .cardTrunfo {
-  width: 50px;
+  width: 2rem;
 }
 
 .cardTrunfoDiv {
   display: flex;
-  justify-content: center;
+  width: 17rem;
 }
-
 
 .cardTrunfoDiv2 {
   background-color: #f0f3bd;
-  border-radius: 6px;
+  border-radius: 0.6rem;
   color: black;
   display: flex;
-  font-size: 12px;
+  font-size: 1.2rem;
   justify-content: center;
-  margin-block: 5px 15px;
-  padding: 3px 6px;
+  margin-block: 0.5rem 1.5rem;
+  padding: 0.3rem 0.6rem;
 }
 
 
 button {
-  background-color: #02c39a;
-  border: #f0f3bd solid 3px;
-  border-radius: 10px;
-  color: #f0f3bd;
-  font-weight: 700;
-  margin-left: 10px;
-  padding-block: 5px;
-  padding-inline: 15px;
-  width: 100px;
-}
-
-.delete-btn {
-  background-color: #af1b3b;
-  border: #f0f3bd solid 3px;
-  border-radius: 10px;
-  color: #f0f3bd;
-  font-weight: 700;
-  margin-bottom: 10px;
-  padding-block: 5px;
-  padding-inline: 15px;
-  width: 100px;
+  background-color: #2FC18C;
+  border: none;
+  color: white;
+  font-weight: 400;
+  height: 4rem;
+  padding-block: 0.5rem;
+  padding-inline: 1.5rem;
+  width: 11.5rem;
 }
 
 button:disabled {
   opacity: 50%;
+}
+
+.filtros {
+  background-color: #036B52;
+  border-radius: 1rem;
+  color: white;
+  display: flex;
+  font-weight: 400;
+  height: 7.5rem;
+  justify-content: space-evenly;
+  width: 112.4rem;
+}
+
+.filtros .checkbox {
+  width: 1.4rem;
+}
+
+.filtros input, select {
+  background-color: #036B52;
+  border: 0.1rem solid white;
+  border-radius: 1rem;
+  color: white;
+  height: 4.5rem;
+  width: 33.167rem;
+}
+
+.filtros input::placeholder {
+  color: white;
+}
+
+.delete-btn {
+  background-color: #af1b3b;
+  border: #f0f3bd solid 0.3rem;
+  border-radius: 1rem;
+  color: #f0f3bd;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-block: 0.5rem;
+  padding-inline: 1.5rem;
+  width: 10rem;
 }

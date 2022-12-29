@@ -2,6 +2,7 @@ import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
 import './App.css';
+import logo from './logo_tryunfo.png';
 
 class App extends React.Component {
   constructor() {
@@ -10,9 +11,9 @@ class App extends React.Component {
     this.state = {
       cardName: '',
       cardDescription: '',
-      cardAttr1: '0',
-      cardAttr2: '0',
-      cardAttr3: '0',
+      cardAttr1: '00',
+      cardAttr2: '00',
+      cardAttr3: '00',
       cardImage: '',
       cardRare: 'normal',
       cardTrunfo: false,
@@ -56,9 +57,9 @@ class App extends React.Component {
     this.setState({
       cardName: '',
       cardDescription: '',
-      cardAttr1: '0',
-      cardAttr2: '0',
-      cardAttr3: '0',
+      cardAttr1: '00',
+      cardAttr2: '00',
+      cardAttr3: '00',
       cardImage: '',
       cardRare: 'normal',
       cardTrunfo: false,
@@ -130,7 +131,7 @@ class App extends React.Component {
 
     return (
       <div className="main">
-        <h1>Tryunfo</h1>
+        <img src={ logo } alt="logo tryunfo" />
         <section className="wrap">
           <section className="fill-form">
             <Form
