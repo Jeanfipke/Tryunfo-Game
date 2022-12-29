@@ -12,7 +12,6 @@ class Card extends Component {
       cardAttr2,
       cardAttr3,
       cardImage,
-      cardRare,
       cardTrunfo,
     } = this.props;
     return (

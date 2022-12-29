@@ -27,8 +27,8 @@ li {
 .fill-form {
   align-items: center;
   background-color: white;
-  color: black;
   border-radius: 1rem;
+  color: black;
   display: flex;
   height: 72.1rem;
   justify-content: space-evenly;
@@ -98,6 +98,24 @@ label {
   width: 36.5rem;
 }
 
+.rarity {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-block: 0.5rem;
+  width: 36.5rem;
+}
+
+.filtros input, select {
+  background-color: #036b52;
+  border: 0.1rem solid white;
+  border-radius: 1rem;
+  color: white;
+  height: 4.5rem;
+  width: 33.167rem;
+}
+
 .fill-form select {
   background-color: white;
   border-bottom: 0.1rem solid black;
@@ -111,8 +129,8 @@ label {
 
 .save-trunfo {
   display: flex;
-  margin-top: 1rem;
   justify-content: space-between;
+  margin-top: 1rem;
   width: 36.5rem;
 }
 
@@ -152,7 +170,7 @@ label {
 
 
 button {
-  background-color: #2FC18C;
+  background-color: #2fc18c;
   border: none;
   color: white;
   font-weight: 400;
@@ -167,7 +185,7 @@ button:disabled {
 }
 
 .filtros {
-  background-color: #036B52;
+  background-color: #036b52;
   border-radius: 1rem;
   color: white;
   display: flex;
@@ -179,15 +197,6 @@ button:disabled {
 
 .filtros .checkbox {
   width: 1.4rem;
-}
-
-.filtros input, select {
-  background-color: #036B52;
-  border: 0.1rem solid white;
-  border-radius: 1rem;
-  color: white;
-  height: 4.5rem;
-  width: 33.167rem;
 }
 
 .filtros input::placeholder {

@@ -19,28 +19,28 @@ class Form extends Component {
     } = this.props;
     return (
       <form className="main-form">
-        <label htmlFor="card-name">
+        <label className="rarity" htmlFor="card-name">
           Nome
+          <input
+            className="name"
+            value={ cardName }
+            onChange={ onInputChange }
+            name="cardName"
+            type="text"
+            id="card-name"
+            data-testid="name-input"
+          />
         </label>
-        <input
-          className="name"
-          value={ cardName }
-          onChange={ onInputChange }
-          name="cardName"
-          type="text"
-          id="card-name"
-          data-testid="name-input"
-        />
-        <label htmlFor="card-description">
+        <label className="rarity" htmlFor="card-description">
           Descrição
+          <textarea
+            value={ cardDescription }
+            onChange={ onInputChange }
+            name="cardDescription"
+            id="card-description"
+            data-testid="description-input"
+          />
         </label>
-        <textarea
-          value={ cardDescription }
-          onChange={ onInputChange }
-          name="cardDescription"
-          id="card-description"
-          data-testid="description-input"
-        />
         <label htmlFor="first-atribute">
           Attr01
           <input
@@ -85,22 +85,22 @@ class Form extends Component {
             data-testid="image-input"
           />
         </label>
-        <label htmlFor="rarity">
+        <label className="rarity" htmlFor="rarity">
           Raridade
+          <select
+            className="rarity"
+            value={ cardRare }
+            onChange={ onInputChange }
+            name="cardRare"
+            id="rarity"
+            data-testid="rare-input"
+            defaultValue="normal"
+          >
+            <option value="normal">Normal</option>
+            <option value="raro">Raro</option>
+            <option value="muito raro">Muito raro</option>
+          </select>
         </label>
-        <select
-          className="rarity"
-          value={ cardRare }
-          onChange={ onInputChange }
-          name="cardRare"
-          id="rarity"
-          data-testid="rare-input"
-          defaultValue="normal"
-        >
-          <option value="normal">Normal</option>
-          <option value="raro">Raro</option>
-          <option value="muito raro">Muito raro</option>
-        </select>
         <div className="save-trunfo">
 
           {

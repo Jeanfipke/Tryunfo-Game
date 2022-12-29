@@ -1,6 +1,6 @@
 .card {
   align-items: center;
-  background-color: #036B52;
+  background-color: #036b52;
   border-radius: 0.97rem;
   box-shadow: white 0 0 0 0.97rem , rgb(156, 156, 156) 0 0 2rem 0.5rem;
   color: #028090;
@@ -8,8 +8,8 @@
   flex-direction: column;
   height: 51.486rem;
   justify-content: center;
-  margin-inline: 2rem;
   margin-block: 2rem;
+  margin-inline: 2rem;
   padding: 1.5rem;
   position: relative;
   width: 33.87rem;
@@ -82,9 +82,9 @@
 
 .card-info {
   align-items: center;
-  background-color: #F0F2F5;
+  background-color: #f0f2f5;
   border-radius: 0.97rem;
-  color: #3D495C;
+  color: #3d495c;
   display: flex;
   font-weight: 600;
   height: 2.992rem;
