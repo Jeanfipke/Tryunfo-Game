@@ -77,7 +77,6 @@ Card.propTypes = {
   cardAttr3: PropTypes.string.isRequired,
   cardImage: PropTypes.string.isRequired,
   cardName: PropTypes.string.isRequired,
-  cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool,
 };
 
