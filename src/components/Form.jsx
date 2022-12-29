@@ -94,7 +94,6 @@ class Form extends Component {
             name="cardRare"
             id="rarity"
             data-testid="rare-input"
-            defaultValue="normal"
           >
             <option value="normal">Normal</option>
             <option value="raro">Raro</option>
